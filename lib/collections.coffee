@@ -1,0 +1,1 @@
+@PastQueries = new Mongo.Collection("pastQueries")
