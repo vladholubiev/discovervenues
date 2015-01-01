@@ -1,7 +1,22 @@
 <template name="pastQueriesList">
     <div class="pastQueriesList">
-        {{#each pastQueries}}
-          {{> pastQuery}}
-        {{/each}}
+        <div class="table-responsive table-striped">
+            <table class="table table-hover table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Query text</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Radius</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each pastQueries}}
+                    {{> pastQuery}}
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
