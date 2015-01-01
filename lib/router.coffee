@@ -6,4 +6,4 @@ Router.configure
     Meteor.subscribe "pastQueries"
 
 Router.route "/",
-  name: "pastQueriesList"
+  name: "main"
