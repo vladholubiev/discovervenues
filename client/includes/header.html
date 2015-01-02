@@ -1,6 +1,9 @@
 <template name="header">
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+            {{#if userName}}
+                <li><a href="#">{{userName}}</a></li>
+            {{/if}}
             {{> loginButtons }}
         </ul>
     </div>
