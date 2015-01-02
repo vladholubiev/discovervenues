@@ -16,3 +16,7 @@ accounts-google
 service-configuration
 less
 dburles:google-maps
+meteorhacks:npm
+
+
+npm-container
