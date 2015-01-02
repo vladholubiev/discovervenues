@@ -15,3 +15,12 @@ Meteor.methods searchVenues: (queryObject) ->
     return
 
   return result
+
+Meteor.methods storePastQuery: (queryObject) ->
+  PastQueries.insert
+    name: queryObject.query
+    lat: parseFloat(queryObject.ll.split(",")[0]).toFixed(4)
+    lon: parseFloat(queryObject.ll.split(",")[1]).toFixed(4)
+    radius: queryObject.radius / 1000
+    date: moment().unix()
+  return

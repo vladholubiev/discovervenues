@@ -15,6 +15,9 @@ Template.searchBox.events "submit form": (e) ->
     radius: getRadius()
     query: $(e.target).find("input").val()
 
+  Meteor.call "storePastQuery", queryObject, (error, result) ->
+    return
+
   Meteor.call "searchVenues", queryObject, (error, result) ->
     venues = _.map result, (venue) ->
       parseVenueJson venue
