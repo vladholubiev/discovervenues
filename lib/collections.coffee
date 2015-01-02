@@ -1,4 +1,5 @@
 @PastQueries = new Mongo.Collection("pastQueries")
+@SearchResults = new Mongo.Collection("searchResults")
 
 Meteor.methods searchVenues: (queryObject) ->
   result = null
@@ -23,4 +24,11 @@ Meteor.methods storePastQuery: (queryObject) ->
     lon: parseFloat(queryObject.ll.split(",")[1]).toFixed(4)
     radius: queryObject.radius / 1000
     date: moment().unix()
+  return
+
+Meteor.methods getSearchResultsCount: ->
+  SearchResults.find().count()
+
+Meteor.methods clearSearchResults: ->
+  SearchResults.remove({})
   return

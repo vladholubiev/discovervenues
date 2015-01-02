@@ -25,6 +25,11 @@ Template.searchBox.events "submit form": (e) ->
     Session.set("noResults", result.length < 1)
     Session.set("noResults", error) if error
     Session.set("searchResultsData", venues)
+
+    Meteor.call "clearSearchResults"
+
+    _.map venues, (venue) ->
+      SearchResults.insert venue
     return
   return
 
