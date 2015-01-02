@@ -24,7 +24,7 @@ Template.searchBox.events "submit form": (e) ->
 
     Session.set("noResults", result.length < 1)
     Session.set("noResults", error) if error
-    Session.set("searchResultsData", venues)
+    Session.set("venues", venues)
 
     Meteor.call "clearSearchResults"
 
@@ -38,22 +38,6 @@ createLatLonString = ->
 
 # Approximate radius based on location and zoom level
 getRadius = ->
-  ###
-  zoom level - diameter of a spherical cap
-  10         - 160 000 m
-  11         -  80 000 m
-  12         -  40 000 m
-  13         -  20 000 m
-  14         -  10 000 m
-  15         -   5 000 m
-  16         -   2 500 m
-  17         -   1 250 m
-  18         -     625 m
-  19         -     312 m
-  20         -     156 m
-  21         -      78 m
-  ###
-
   radius = 80000 # maximum radius
   zoom = getZoom()
   if zoom > 10
