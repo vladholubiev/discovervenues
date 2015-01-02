@@ -22,3 +22,4 @@ meteorhacks:npm
 npm-container
 momentjs:moment
 alethes:pages@=1.6.2
+harrison:papa-parse
