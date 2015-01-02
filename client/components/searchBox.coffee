@@ -12,13 +12,10 @@ Template.searchBox.events "submit form": (e) ->
     ll: createLatLonString()
     query: $(e.target).find("input").val()
 
-  console.log queryObject
-
   Meteor.call "searchVenues", queryObject, (error, result) ->
     console.log result
     Session.set("noResults", result.length < 1)
-
-    alert(error.reason) if error
+    Session.set("noResults", error) if error
     return
   return
 
