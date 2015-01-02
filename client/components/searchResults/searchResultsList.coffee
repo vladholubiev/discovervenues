@@ -1,2 +1,2 @@
-Template.searchResultsList.helpers searchResultsData: ->
+Template.searchResultsList.helpers searchResults: ->
   Session.get("searchResultsData")
