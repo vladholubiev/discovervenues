@@ -1,5 +1,8 @@
-Template.searchBox.helpers notUser: ->
+Template.searchBox.helpers isNotUser: ->
   not Meteor.user()
+
+Template.searchBox.helpers invalidQuery: ->
+  Session.get("noResults")
 
 Template.searchBox.events "submit form": (e) ->
   e.preventDefault()
@@ -13,6 +16,7 @@ Template.searchBox.events "submit form": (e) ->
 
   Meteor.call "searchVenues", queryObject, (error, result) ->
     console.log result
+    Session.set("noResults", result.length < 1)
 
     alert(error.reason) if error
     return

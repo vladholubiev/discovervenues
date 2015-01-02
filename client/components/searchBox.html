@@ -3,11 +3,7 @@
         <div class="form-group">
             <input type="text" class="form-control" name="" id="" placeholder="Enter venue type">
         </div>
-        {{#if notUser}}
-            <div class="alert alert-warning">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                You are not allowed to perform a search. Please sign in via your Google account.
-            </div>
-        {{/if}}
+        {{#if isNotUser}} {{> notUser }} {{/if}}
+        {{#if invalidQuery}} {{> noResults }} {{/if}}
     </form>
 </template>
