@@ -16,6 +16,7 @@ Template.searchBox.events "submit form": (e) ->
     console.log result
     Session.set("noResults", result.length < 1)
     Session.set("noResults", error) if error
+    Session.set("searchResultsData", result)
     return
   return
 

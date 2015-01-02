@@ -1,6 +1,23 @@
 <template name="searchResultsList">
     <h2>{{countOfSearchResults}} venues</h2>
-    {{#each searchResults}}
-        {{> searchResult}}
-    {{/each}}
+    <div class="searchResultsList">
+        <div class="table-responsive table-striped">
+            <table class="table table-hover table-striped table-borderless">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Street Address</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each searchResults}}
+                    {{> searchResult}}
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </template>
