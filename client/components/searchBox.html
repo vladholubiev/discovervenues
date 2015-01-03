@@ -1,8 +1,7 @@
 <template name="searchBox">
     <form action="" method="POST" role="form">
         <div class="form-group">
-            <input type="text" class="form-control"
-                   placeholder="Enter venue type" value="School">
+            <input type="text" class="form-control" placeholder="Type a Venue">
         </div>
         {{#if isNotUser}} {{> notUser }} {{/if}}
         {{#if invalidQuery}} {{> noResults }} {{/if}}
