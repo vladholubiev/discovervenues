@@ -22,8 +22,7 @@ Template.searchBox.events "submit form": (e) ->
     venues = _.map result, (venue) ->
       parseVenueJson venue
 
-    Session.set("noResults", result.length < 1)
-    Session.set("noResults", error) if error
+    Session.set("noResults", true) if error or result.length < 1
     Session.set("venues", venues)
 
     Meteor.call "clearSearchResults"

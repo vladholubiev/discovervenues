@@ -4,7 +4,12 @@ Template.searchResults.helpers numberOfVenues: ->
   Session.get("numberOfVenues")
 
 Template.searchResults.helpers noData: ->
-  not Session.get("venues")
+  if Session.get("venues") is undefined and Session.get("noResults") is undefined
+    return yes
+  else
+    if Session.get("venues") is undefined
+      Session.get("noResults")
+    else Session.get("venues").length < 1
 
 Template.searchResults.events "click #export": ->
   csv = Papa.unparse(Session.get("venues"))
