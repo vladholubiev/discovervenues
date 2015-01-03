@@ -24,6 +24,7 @@ Meteor.methods storePastQuery: (queryObject) ->
     lon: parseFloat(queryObject.ll.split(",")[1]).toFixed(4)
     radius: queryObject.radius / 1000
     date: moment().unix()
+    user: queryObject.user
   return
 
 Meteor.methods getSearchResultsCount: ->

@@ -1,4 +1,5 @@
 Template.pastQueriesList.helpers pastQueries: ->
-  PastQueries.find {},
+  userId = Meteor.userId() ? "anonymous"
+  PastQueries.find {user: userId},
     sort:
       date: 1

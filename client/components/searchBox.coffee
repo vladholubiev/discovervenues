@@ -13,6 +13,7 @@ Template.searchBox.events "submit form": (e) ->
     ll: createLatLonString()
     intent: "browse"
     radius: getRadius()
+    user: Meteor.userId()
     query: $(e.target).find("input").val()
 
   Meteor.call "storePastQuery", queryObject, (error, result) ->
