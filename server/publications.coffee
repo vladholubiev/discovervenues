@@ -1,3 +1,5 @@
 Meteor.publish "pastQueries", ->
   PastQueries.find {},
-    skip: PastQueries.find().count() - 5
+    sort:
+      date: -1
+    limit: 5
