@@ -1,5 +1,5 @@
 ###### Disclaimer
-This repository contains a test task completed in order to apply for a job in [JSSolutions](https://github.com/JSSolutions).
+This repository contains a first test task given in order to apply for a job in [JSSolutions](https://github.com/JSSolutions). The second one is located [here](https://github.com/vladgolubev/node-file-comparer).
 
 ### Discover venues
 
